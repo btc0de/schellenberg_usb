@@ -353,7 +353,7 @@ class SchellenbergUsbApi:
         # 9 = number of messages to send
         # CC = command (60 = pair)
         # PPPP = padding (4 chars)
-        pair_command = f"{CMD_TRANSMIT}{device_enum}9{CMD_PAIR}0000"
+        pair_command = f"{CMD_TRANSMIT}{device_enum}94{CMD_PAIR}0000"
 
         _LOGGER.info(
             "Initiating pairing with device enum %s. Command: %s",
@@ -425,7 +425,7 @@ class SchellenbergUsbApi:
 
         # Format: ssXX9AAZZZ
         # XX = device enum, 9 = number of messages, AA = command, ZZZ = padding
-        command = f"{CMD_TRANSMIT}{device_enum}9{action}0000"
+        command = f"{CMD_TRANSMIT}{device_enum}94{action}0000"
         _LOGGER.debug("Sending blind control: %s", command)
         await self.send_command(command)
 
@@ -604,7 +604,7 @@ class SchellenbergUsbApi:
         """
         # Format: ssXX9AAZZZ
         # XX = device enum, 9 = number of messages, AA = command, ZZZ = padding
-        command = f"{CMD_TRANSMIT}{device_enum}9{CMD_SET_UPPER_ENDPOINT}0000"
+        command = f"{CMD_TRANSMIT}{device_enum}94{CMD_SET_UPPER_ENDPOINT}0000"
         _LOGGER.debug("Setting upper endpoint for device %s: %s", device_enum, command)
         await self.send_command(command)
 
@@ -617,7 +617,7 @@ class SchellenbergUsbApi:
         """
         # Format: ssXX9AAZZZ
         # XX = device enum, 9 = number of messages, AA = command, ZZZ = padding
-        command = f"{CMD_TRANSMIT}{device_enum}9{CMD_SET_LOWER_ENDPOINT}0000"
+        command = f"{CMD_TRANSMIT}{device_enum}94{CMD_SET_LOWER_ENDPOINT}0000"
         _LOGGER.debug("Setting lower endpoint for device %s: %s", device_enum, command)
         await self.send_command(command)
 
@@ -630,7 +630,7 @@ class SchellenbergUsbApi:
         """
         # Format: ssXX9AAZZZ
         # XX = device enum, 9 = number of messages, AA = command, ZZZ = padding
-        command = f"{CMD_TRANSMIT}{device_enum}9{CMD_ALLOW_PAIRING}0000"
+        command = f"{CMD_TRANSMIT}{device_enum}94{CMD_ALLOW_PAIRING}0000"
         _LOGGER.debug("Allowing pairing on device %s: %s", device_enum, command)
         await self.send_command(command)
 
@@ -643,7 +643,7 @@ class SchellenbergUsbApi:
         """
         # Format: ssXX9AAZZZ
         # XX = device enum, 9 = number of messages, AA = command, ZZZ = padding
-        command = f"{CMD_TRANSMIT}{device_enum}9{CMD_MANUAL_UP}0000"
+        command = f"{CMD_TRANSMIT}{device_enum}94{CMD_MANUAL_UP}0000"
         _LOGGER.debug("Manual up for device %s: %s", device_enum, command)
         await self.send_command(command)
 
@@ -656,7 +656,7 @@ class SchellenbergUsbApi:
         """
         # Format: ssXX9AAZZZ
         # XX = device enum, 9 = number of messages, AA = command, ZZZ = padding
-        command = f"{CMD_TRANSMIT}{device_enum}9{CMD_MANUAL_DOWN}0000"
+        command = f"{CMD_TRANSMIT}{device_enum}94{CMD_MANUAL_DOWN}0000"
         _LOGGER.debug("Manual down for device %s: %s", device_enum, command)
         await self.send_command(command)
 
